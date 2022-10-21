@@ -11,6 +11,6 @@ if [ "$USERNAME" = "" ]; then
     exit 1
 fi
 
-docker-compose run --rm openvpn easyrsa revoke ${USERNAME}
-docker-compose run --rm openvpn easyrsa gen-crl
+docker compose run --rm openvpn easyrsa revoke ${USERNAME}
+docker compose run --rm openvpn easyrsa gen-crl
 rm -rfv "$CLIENTS_DIR/$USERNAME".ovpn
